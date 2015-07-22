@@ -1,7 +1,7 @@
 {
   "name": "meshblu-cam",
   "repository": "octoblu/meshblu-cam",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "connector.js",
   "scripts": {
     "preinstall": "node -e \"try{require('./skip-install.js')}catch(e){}\"",
@@ -13,7 +13,8 @@
     "debug": "^2.1.0",
     "audiovideo": "1.1.1",
     "base64-img": "^1.0.3",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "node-pre-gyp": "*"
   },
   "bundledDependencies": [
     "request",
