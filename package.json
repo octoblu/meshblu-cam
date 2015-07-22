@@ -1,0 +1,27 @@
+{
+  "name": "meshblu-cam",
+  "repository": "octoblu/meshblu-cam",
+  "version": "1.0.0",
+  "main": "connector.js",
+  "scripts": {
+    "preinstall": "node -e \"try{require('./skip-install.js')}catch(e){}\"",
+    "start": "node command.js",
+    "test": "exit 0"
+  },
+  "dependencies": {
+    "meshblu": "^1.22.0",
+    "debug": "^2.1.0",
+    "audiovideo": "1.1.1",
+    "base64-img": "^1.0.3",
+    "underscore": "^1.8.3"
+  },
+  "bundledDependencies": [
+    "request",
+    "tar",
+    "fstream"
+  ],
+  "keywords": [
+    "meshblu-connector",
+    "gateblu"
+  ]
+}
