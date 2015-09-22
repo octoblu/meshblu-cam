@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+- '0.10'
+addons:
+  apt:
+    packages:
+    - libjpeg
+before_install:
+  - npm install npm -g
+deploy:
+  - provider: npm
+    skip_cleanup: true
+    clean_up: false
+    email: serveradmin@octoblu.com
+    api_key:
+      secure: replace-me
+    on:
+      tags: true
+      all_branches: true
