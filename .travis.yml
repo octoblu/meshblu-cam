@@ -4,7 +4,7 @@ node_js:
 addons:
   apt:
     packages:
-    - libjpeg
+    - libjpeg-dev
 before_install:
   - npm install npm -g
 deploy:
@@ -13,7 +13,7 @@ deploy:
     clean_up: false
     email: serveradmin@octoblu.com
     api_key:
-      secure: replace-me
+      secure: "nd/MywgLc/WE7JlQi6W5+akj7MTardQzSIXINuzTnxLqZKfV3kPAL3R0g9g/mERzKONGfwAk/dcYMMHtlPZxIk/XV+6L1aoylBjN2THSrk1DTr++OhnRnwW/GXEIQsfu+W5hs1Rqc7+IkuH+nvSZV46iV5ckIYG3qLK95/zi/R/67HqTe+W57Dj7m7ffDVk8USr/zgDq7jhNygKMhmxlytN3kXc2Qm/2J/vX4Sple4MgeCenFTmU+dzXvK7ZxZXJe8AV8lDudCJNzSm/b67jRpSXNpnNZ6B+3Q9TXIGAj56MLJDlMhU3rj1NG4M2whz/TvMwiqrDfsyz0UYqZop0escU3tJ3XKzqyYblZBAtsRIlQu/apNSezLKDMtyi980JGcuWAea/h41Gx/ZPuv14oHg6NN55Jez1Oz9CCYRs2xmoqge3UzqgAuTm77KMkh9ZPCCtd+seSttKGEaAKl1FXYOOmWpXnEyASH+85yUBX3cSugwzGqjKRdlG3e9jxyPdznYgwFei4DPzwe5ad4aNpo9zIzzrqEqiC1xtcFnuhcikxsj34w81mNl0ziK78B+EasMlu1oi/zNyHYIqtcBuZFvderAr/5FGgomTy0umj2SiKu2TAOiB5BTs2Ou4mydwklbG09xo1y80L98P079raW4p6vpJXVIurZJIKew1bJQ="
     on:
       tags: true
       all_branches: true
