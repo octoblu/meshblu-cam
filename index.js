@@ -21,6 +21,11 @@ var MESSAGE_SCHEMA = {
       "type": "boolean",
       "title": "Take picture",
       "default": true
+    },
+    "send_as_raw": {
+      "type": "boolean",
+      "title": "Raw base64 (works with twitter)",
+      "default": false
     }
   }
 };
@@ -87,11 +92,12 @@ Plugin.prototype.onMessage = function(message){
   if(payload.snapshot){
     cameratwo.captureShot('jpeg').pipe(fs.createWriteStream('out.jpg'));
     base64Img.base64('out.jpg', function(err, data) {
-      var image = data;
-      var payload =  {
-        "pictures": image
-      };
-      self.emit('message', { devices: ['*'], payload: {pictures: image} });
+      if(payload.send_as_raw == false){
+          self.emit('message', { devices: ['*'], "payload": {"pictures": data} });
+        }else if(payload.send_as_raw == true){
+          var data = fs.readFileSync('out.jpg', { encoding: 'base64' });
+          self.emit('message', { "devices": ['*'], "payload": {"pictures": data}});
+        }
     });
    }
 };
